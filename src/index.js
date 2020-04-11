@@ -1,0 +1,1 @@
+import './easy/3D-card/3D-card.scss'

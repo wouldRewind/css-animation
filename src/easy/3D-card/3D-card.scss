@@ -1,0 +1,44 @@
+body{font-family: sans-serif;}
+.wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #BBDEF8;
+}
+.back{
+    transform:rotateY(180deg);
+}
+.card{
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+  position: relative;
+  background-color: transparent;
+}
+.front,.back{
+  border-radius: 30px;
+  backface-visibility: hidden;
+  transition: 1.2s;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+  top: 0;
+  left: 0;
+}
+.front{
+  background-color: #fff;
+}
+.back{
+  
+  background-color: #BDBDBD;
+}
+.card:hover .front{transform:rotateY(180deg)}
+.card:hover .back{transform:rotateY(360deg)}

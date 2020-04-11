@@ -1,17 +1,18 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin")
- const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const fs = require('fs');
+// const PAGES_DIR = path.resolve(__dirname, 'src/pages');
+// const PAGES = fs.readdirSync(PAGES_DIR);
 
 
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
-  plugins: [   
-      // Later,then I will figure out with Node.js, I will add dynamic path
-      new CleanWebpackPlugin(),
-    // new HtmlWebpackPlugin({
-    //   filename : 'index.html',
-    //   template :'src/index.pug'
-    // }),
+  plugins: [
+    new HtmlWebpackPlugin({
+        filename: '3D-card.html',
+        template: './src/easy/3D-card/3D-card.pug',
+      })
   ],
   output: {
     filename: 'main.js',
@@ -19,6 +20,7 @@ module.exports = {
   },
   devServer: {
     port: 3000,
+    contentBase: path.join(__dirname, 'dist'),
   },
   module: {
     rules: [
